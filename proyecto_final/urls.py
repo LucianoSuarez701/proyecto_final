@@ -25,8 +25,6 @@ from app_product.views import List_products
 urlpatterns = [
     path('', index, name = 'index'),
     path('admin/', admin.site.urls),
-
-    path('lista/', List_products.as_view(), name = 'list_products'),#lo saque de las urls de la app y lo puse aca para probar la vista
-
+    # path('lista/', List_products.as_view(), name = 'list_products'),#lo saque de las urls de la app y lo puse aca para probar la vista
     path('app_product/', include('app_product.urls')), #que hace esto? trae los urls de la app?
 ]
