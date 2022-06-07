@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, CreateView # VISTAS GENER
 
 class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
-    template_name= 'productos-global.html'
+    template_name= 'productos.html'
 
 class Detail_Heladeras(DetailView):
     model = Heladeras
