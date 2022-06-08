@@ -31,11 +31,12 @@ class Detail_Televisores(DetailView):
 #     context = {'celulares':Celulares}
 #     return render(request, 'celulares.html', context=context)
 
-# def products(request):
-#     print(request.method)
-#     productos = Heladeras.objects.all()
-#     context = {'heladeras': Heladeras}
-#     return render(request, 'heladeras.html', context=context)
+def mostrar_heladeras(request):
+     return render(request, 'heladeras.html')
+    # print(request.method)
+    # productos = Heladeras.objects.all()
+    # context = {'heladeras': Heladeras}
+    # return render(request, 'heladeras.html', context=context)
 
 # def products(request):
 #     print(request.method)
