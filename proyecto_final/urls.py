@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from proyecto_final.views import index
-from app_product.views import mostrar_heladeras# lo acabo de hacer para probar la vista desde el URL base ya que en el de la app no anda
+from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores # lo acabo de hacer para probar la vista desde el URL base ya que en el de la app no anda
 
 urlpatterns = [
     path('', index, name = 'index'),
@@ -25,7 +25,8 @@ urlpatterns = [
     path('app_product/', include('app_product.urls')), 
 
     path("heladeras/", mostrar_heladeras, name = "heladeras"),
-
+    path("celulares/", mostrar_celulares, name = "celulares"),
+    path("televisores/", mostrar_televisores, name = "televisores"),
 
     # path('lista/', List_products.as_view(), name = 'list_products'),#lo saque de las urls de la app y lo puse aca para probar la vista
 ]
