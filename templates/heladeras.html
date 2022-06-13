@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block contenido %}
-<h1 style="margin-left:30rem">Aca va el contenido de productos</h1>
+<h1 style="margin-left:30rem">Aca va el contenido de Heladeras</h1>
 
 {{message}}
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for heladera in object_list %}
+    {% for Heladera in Heladeras %}
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{heladera.name}}</h5>
+            <h5 class="card-title">{{Heladeras.name}}</h5>
             <p class="card-text">{{heladera.description}}</p>
             <p class="card-text">{{heladera.price}}</p>
             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
@@ -22,6 +22,6 @@
     </div>
 
     {% endfor %}
-</div>
+
 
 {% endblock %}

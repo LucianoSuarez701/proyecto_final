@@ -9,98 +9,44 @@
         {% block titulo %}
         {% endblock %}
     </title>
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar " style="background: lightblue;">
+        <a class="navbar-brand" href="/">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <header class="header sticky sticky--top js-header">
-
-        <div class="grid">
-
-            <nav class="navigation">
-                <ul class="navigation__list navigation__list--inline">
-
-                    <li class="navigation__item"><a href="#"
-                            class="navigation__link navigation__link--is-active">Celulares</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Heladeras</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Televisores</a></li>
-
-                </ul>
-                <form class="form-inline my-2 my-lg-0" action="/products/search-product/" method="GET">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search"
-                        name='search'>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/heladeras/">Heladeras </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/celulares/">Celulares</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/televisores/">Televisores</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action = "/products/search-product/" method = "GET">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name = 'search'>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-
-    </header>
-
-    <main class="main">
-
-        <div class="grid">
-
-            <h1>Lorem ipsum dolor sit.</h1>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sed voluptatem error vel eius placeat harum
-                voluptate doloribus ratione in, vero aliquid et, itaque, repellat magnam nisi adipisci unde, odit esse
-                architecto hic! Eaque libero officia laudantium laboriosam non velit vero pariatur, rem nisi commodi
-                dolores, culpa quibusdam dolorem nemo voluptatem. Ipsam, molestias autem iste est quia magni iusto
-                distinctio esse magnam possimus tenetur dolor, suscipit fugiat ad? Natus officia magnam ipsam. Nisi aut
-                quis natus voluptatum, sapiente inventore quidem similique odio, quod iste delectus commodi maxime
-                asperiores doloribus officiis fuga, eaque, beatae ipsam assumenda architecto. At minima pariatur qui!
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem numquam sint nisi natus fugiat
-                quibusdam, iusto unde tenetur consequuntur, dolorum laborum consectetur explicabo at blanditiis aperiam
-                perferendis totam neque vitae eos quisquam, ratione cum id fuga? Ad harum dolores optio debitis, eaque
-                excepturi, iste totam. Quasi, maiores eligendi laudantium nobis harum ullam nihil voluptas officia id
-                molestiae animi deleniti placeat dolorum atque fuga. Mollitia ducimus corporis natus doloribus
-                blanditiis, voluptatem officia nesciunt sit dolorem incidunt illum vel voluptas, exercitationem nemo
-                repellendus deleniti! Vero rerum natus blanditiis voluptatibus nihil deserunt, vitae nulla reprehenderit
-                perferendis praesentium minus, dolor consequuntur repellat repudiandae, facilis veritatis dolorem? Nisi
-                magni dolor, ut maiores voluptas rem amet commodi est distinctio perferendis mollitia dicta dolores,
-                officiis dignissimos dolorem ea soluta ex quae nemo. Cupiditate ab ratione voluptatem non impedit,
-                tempora voluptas ipsam iste sed a, animi sunt veniam deserunt molestias nobis excepturi. Earum inventore
-                vitae recusandae, sint. Aut.</p>
-
-        </div>
-
-    </main>
-
-
-    <!--<nav class="navbar navbar-expand-lg navbar " style="background: rgb(5, 65, 85);">
-            <a class="navbar-brand" href="/">Inicio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/heladeras/">Heladeras </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/celulares/">Celulares</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/televisores/">Televisores</a>
-                
-                </ul>
-            
-            </div>
-        
-        </nav>
-
-        
-        
     
-        {% block contenido %}
-        {% endblock %} -->
+    </nav>
+
+    
+    
+    
+    {% block contenido %}
+    
+    {% endblock %}
 
 </body>
 
