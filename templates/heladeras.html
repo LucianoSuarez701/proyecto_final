@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block contenido %}
-<h1 style="margin-left:30rem">Aca va el contenido de Heladeras</h1>
+<h1 style="margin-left:30rem">Estas son nuestras heladeras</h1>
 
 {{message}}
 
@@ -15,8 +15,10 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{heladera.name}}</h5>
-            <p class="card-text">{{heladera.description}}</p>
-            <p class="card-text">{{heladera.price}}</p>
+            <p class="card-text">Precio: {{heladera.price}}</p>
+            <p class="card-text">Litros: {{heladera.litters}}</p>
+            <p class="card-text">Descripcion: {{heladera.description}}</p>
+            <p class="card-text">SKU: {{heladera.SKU}}</p>
             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
         </div>
     </div>
