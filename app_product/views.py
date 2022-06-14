@@ -13,13 +13,10 @@ class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
     template_name= 'productos.html'
 
-def mostrar_celulares(request):
-     return render(request, 'celulares.html')
-# def products(request):
-#     print(request.method)
-#     productos = Celulares.objects.all()                                #para ver con leandro la funcionalidad de la antigua view
-#     context = {'celulares':Celulares}
-#     return render(request, 'celulares.html', context=context)
+def mostrar_celulares(request):    
+     celulares = Celulares.objects.all()                                
+     context = {'celulares':celulares}
+     return render(request, 'celulares.html', context=context)
 
 def mostrar_heladeras(request):
      return render(request, 'heladeras.html')

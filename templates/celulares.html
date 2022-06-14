@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Inicio
+    Productos
 {% endblock %}
 
 {% block contenido %}
 <h1 style="margin-left:30rem">Aca va el contenido de celulares</h1>
+
+{{message}}
+
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for celular in celulares %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{celular.name}}</h5>
+            <!-- <p class="card-text">{{heladera.description}}</p>
+            <p class="card-text">{{heladera.price}}</p> -->
+            <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
 {% endblock %}
