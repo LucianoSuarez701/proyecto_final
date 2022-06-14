@@ -19,10 +19,14 @@ def mostrar_celulares(request):
      return render(request, 'celulares.html', context=context)
 
 def mostrar_heladeras(request):
-     return render(request, 'heladeras.html')
- 
+     heladeras = Heladeras.objects.all()                                
+     context = {'heladeras':heladeras}
+     return render(request, 'heladeras.html', context=context)
+
 
 def mostrar_televisores(request):
-     return render(request, 'televisores.html')
-   
+     televisores = Televisores.objects.all()                                
+     context = {'televisores':televisores}
+     return render(request, 'televisores.html', context=context)
+
 
