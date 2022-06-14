@@ -36,6 +36,7 @@ def mostrar_televisores(request):
 #      else:
 #           context = {'errors':'No se encontro el producto'}
 #      return render(request, 'search-products.html', context = context)
+# ESTA FUNCION NO VA, CREO QUE LA VALIDA ES LA QUE ESTA DEBAJO
 
 def search_products(request):
      productoheladeras = Heladeras.objects.filter(name__icontains=request.get['search']),
