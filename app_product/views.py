@@ -29,4 +29,24 @@ def mostrar_televisores(request):
      context = {'televisores':televisores}
      return render(request, 'televisores.html', context=context)
 
+# def search_products(request):
+#      products = [Heladeras.objects.filter(name__icontains=request.GET['search']), Televisores.objects.filter(name__icontains=request.GET['search']), Celulares.objects.filter(name__icontains=request.GET['search'])]
+#      if products.exists():
+#           context = {'products':}
+#      else:
+#           context = {'errors':'No se encontro el producto'}
+#      return render(request, 'search-products.html', context = context)
 
+def search_products(request):
+     productoheladeras = Heladeras.objects.filter(name__icontains=request.get['search']),
+     productocel = Celulares.objects.filter(name__icontains=request.get['search']),
+     productotv = Televisores.objects.filter(name__icontains=request.get['search']),
+     if productoheladeras.exists():
+          context = {'productoheladeras': productoheladeras},
+     elif productotv.exists():
+          context = {'productotv': productotv},
+     elif productocel.exists():
+          context = {'productocel': productocel},
+     else:
+          context = {"errors": 'No se encuentra el producto'}
+     return render(request, search_products.html, context=context)

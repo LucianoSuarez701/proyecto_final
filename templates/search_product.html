@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Productos
+{% endblock %}
+
+{% block contenido %}
+<h1 style="margin-left:30rem">Aca va el contenido del Producto buscado</h1>
+
+{{message}}
+
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for producto in heladeras, celulares, televisores %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">{{producto.description}}</p>
+            <p class="card-text">{{producto.price}}</p>
+            <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+{% endblock %}

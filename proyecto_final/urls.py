@@ -17,20 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 
 from proyecto_final.views import index
-from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores 
+from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
 
 from app_product.views import List_products
 
 urlpatterns = [
     path('', index, name = 'index'),
     path('admin/', admin.site.urls),
-    path('app_product/', include('app_product.urls')), 
-
-    path('', List_products.as_view(), name = 'list_products'),
-
+    # path('app_product/', include('app_product.urls')), 
+    # path('', List_products.as_view(), name = 'list_products'),
     path("heladeras/", mostrar_heladeras, name = "heladeras"),
     path("celulares/", mostrar_celulares, name = "celulares"),
     path("televisores/", mostrar_televisores, name = "televisores"),
+    path('search_product/', search_products, name = 'search_products'),
 ]
 
- 
+
