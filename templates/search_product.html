@@ -5,50 +5,50 @@
 {% endblock %}
 
 {% block contenido %}
- <h1 style="margin-left:30rem">Aca va el contenido del Producto buscado</h1>
+<h1 style="margin-left:30rem">Aca va el contenido del Producto buscado</h1>
 
- {{message}}
+{{message}}
 
- <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-     {% for producto in productoheladeras %}
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for producto in productoheladeras %}
  
-     <div class="card" style="width: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">{{producto.name}}</h5>
-             <p class="card-text">{{producto.description}}</p>
-             <p class="card-text">{{producto.price}}</p>
-             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
-         </div>
-     </div>
- 
-     {% endfor %}
- 
-     {% for producto in productocel  %}
- 
-     <div class="card" style="width: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">{{producto.name}}</h5>
-             <p class="card-text">{{producto.description}}</p>
-             <p class="card-text">{{producto.price}}</p>
-             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
-         </div>
-     </div>
- 
-     {% endfor %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">{{producto.description}}</p>
+            <p class="card-text">{{producto.price}}</p>
+            <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
 
-     {% for producto in productotv  %}
- 
-     <div class="card" style="width: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">{{producto.name}}</h5>
-             <p class="card-text">{{producto.description}}</p>
-             <p class="card-text">{{producto.price}}</p>
-             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
-         </div>
-     </div>
- 
-     {% endfor %}
- 
- 
- 
- {% endblock %}
+    {% endfor %}
+
+    {% for producto in productocel  %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">{{producto.description}}</p>
+            <p class="card-text">{{producto.price}}</p>
+            <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    {% for producto in productotv  %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">{{producto.description}}</p>
+            <p class="card-text">{{producto.price}}</p>
+            <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+
+{% endblock %}
