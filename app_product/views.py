@@ -39,10 +39,16 @@ def mostrar_televisores(request):
 # ESTA FUNCION NO VA, CREO QUE LA VALIDA ES LA QUE ESTA DEBAJO
 
 def search_products(request):
+<<<<<<< HEAD
      productoheladeras = Heladeras.objects.filter(name__icontains=request.GET['search'])
      productocel = Celulares.objects.filter(name__icontains=request.GET['search'])
      productotv = Televisores.objects.filter(name__icontains=request.GET['search'])
      print(2)
+=======
+     productoheladeras = Heladeras.objects.filter(name__icontains=request.GET['search']),
+     productocel = Celulares.objects.filter(name__icontains=request.GET['search']),
+     productotv = Televisores.objects.filter(name__icontains=request.GET['search']),
+>>>>>>> f2e9a92f386e995a413303299d69bac1646e950f
      if productoheladeras.exists():
          context = {'productoheladeras': productoheladeras}
          print (1)
