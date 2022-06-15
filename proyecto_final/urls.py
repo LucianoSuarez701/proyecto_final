@@ -29,7 +29,7 @@ urlpatterns = [
     path("heladeras/", mostrar_heladeras, name = "heladeras"),
     path("celulares/", mostrar_celulares, name = "celulares"),
     path("televisores/", mostrar_televisores, name = "televisores"),
-    path('search_product/', search_products, name = 'search_products'),
+    path("search_product/", search_products, name = "search_products"),
 ]
 
 
