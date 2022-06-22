@@ -4,7 +4,7 @@ from django.urls import reverse
 from unicodedata import name 
 from app_product.models import Celulares, Heladeras, Televisores
 # from app_product.forms import Celulares_form, Heladeras_form, Televisores_form # FORMULARIOS VIEJOS, AHORA USAMOS LAS VISTAS GENERICAS DE DJANGO
-from django.views.generic import ListView # VISTAS GENERICAS DE DJANGO
+from django.views.generic import ListView, CreateView # VISTAS GENERICAS DE DJANGO
 
 # Create your views here.
 
@@ -56,3 +56,27 @@ def search_products(request):
           context = {"errors": 'No se encuentra el producto'}
      return render(request, "search_product.html", context = context)
 
+
+class Crear_celular(CreateView):
+    model = Celulares
+    template_name = 'crear_celular.html'
+    fields = '__all__'    
+
+    def get_success_url(self):
+        return reverse('celulares', kwargs={'pk':self.object.pk})     
+
+class Crear_heladera(CreateView):
+    model = Heladeras
+    template_name = 'crear_heladera.html'
+    fields = '__all__'    
+
+    def get_success_url(self):
+        return reverse('heladeras', kwargs={'pk':self.object.pk})     
+
+class Crear_televisor(CreateView):
+    model = Televisores
+    template_name = 'crear_televisor.html'
+    fields = '__all__'    
+
+    def get_success_url(self):
+        return reverse('televisores', kwargs={'pk':self.object.pk})  
