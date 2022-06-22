@@ -4,7 +4,7 @@ from django.urls import reverse
 from unicodedata import name 
 from app_product.models import Celulares, Heladeras, Televisores
 # from app_product.forms import Celulares_form, Heladeras_form, Televisores_form # FORMULARIOS VIEJOS, AHORA USAMOS LAS VISTAS GENERICAS DE DJANGO
-from django.views.generic import ListView, CreateView # VISTAS GENERICAS DE DJANGO
+from django.views.generic import ListView, CreateView# VISTAS GENERICAS DE DJANGO
 
 # Create your views here.
 
@@ -18,6 +18,11 @@ def mostrar_celulares(request):
      context = {'celulares':celulares}
      return render(request, 'celulares.html', context=context)
 
+def detalles_celulares(request):    
+     detalles_celulares = Celulares.objects.all()                                
+     context = {'detalles_celulares':detalles_celulares}
+     return render(request, 'detalles_celulares.html', context=context)
+     
 def mostrar_heladeras(request):
      heladeras = Heladeras.objects.all()                                
      context = {'heladeras':heladeras}

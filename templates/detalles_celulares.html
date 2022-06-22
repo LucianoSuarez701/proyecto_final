@@ -5,25 +5,24 @@
 {% endblock %}
 
 {% block contenido %}
-<h1 style="margin-left:30rem">Estos son nuestros celulares</h1>
+<h1 style="margin-left:30rem">Estos son los detalles de nuestros celulares</h1>
 
-<form class="form-inline my-2 my-lg-0" action = "/crear_celular/" method = "GET">
-    <button style="margin-left:40rem"  class="btn btn-primary" type="submit">Cree su propio Celular</button>
-</form>
+<a href="/celulares/" class="btn btn-primary">Volver atras!</a>
 
 {{message}}
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for celular in celulares %}
+    {% for celular in detalles_celulares %}
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{celular.name}}</h5>
-            <!-- <p class="card-text">Precio: {{celular.price}}</p> 
+            <p class="card-text">Precio: {{celular.price}}</p> 
             <p class="card-text">Pulgadas: {{celular.inches}}</p> 
             <p class="card-text">Descripcion: {{celular.description}}</p> 
-            <p class="card-text">SKU: {{celular.SKU}}</p> -->
-            <a href="/detalles_celulares/" class="btn btn-primary">Ver mas!</a>
+            <p class="card-text">SKU: {{celular.SKU}}</p>
+            <a href="/list_products/" class="btn btn-primary">Editar</a>
+            <a href="/list_products/" class="btn btn-primary">Eliminar</a>
         </div>
     </div>
 
