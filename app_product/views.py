@@ -63,7 +63,7 @@ class Crear_celular(CreateView):
     fields = '__all__'    
 
     def get_success_url(self):
-        return reverse('celulares', kwargs={'pk':self.object.pk})     
+        return reverse('celulares')   
 
 class Crear_heladera(CreateView):
     model = Heladeras
@@ -71,7 +71,7 @@ class Crear_heladera(CreateView):
     fields = '__all__'    
 
     def get_success_url(self):
-        return reverse('heladeras', kwargs={'pk':self.object.pk})     
+        return reverse('heladeras')    
 
 class Crear_televisor(CreateView):
     model = Televisores
@@ -79,4 +79,4 @@ class Crear_televisor(CreateView):
     fields = '__all__'    
 
     def get_success_url(self):
-        return reverse('televisores', kwargs={'pk':self.object.pk})  
+        return reverse('televisores') 
