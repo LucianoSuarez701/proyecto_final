@@ -12,21 +12,21 @@
 {{message}}
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for celular in detalles_celulares %}
+    
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{celular.name}}</h5>
-            <p class="card-text">Precio: {{celular.price}}</p> 
-            <p class="card-text">Pulgadas: {{celular.inches}}</p> 
-            <p class="card-text">Descripcion: {{celular.description}}</p> 
-            <p class="card-text">SKU: {{celular.SKU}}</p>
+            <h5 class="card-title">{{detalle_celulares.name}}</h5>
+            <p class="card-text">Precio: {{detalle_celulares.price}}</p> 
+            <p class="card-text">Pulgadas: {{detalle_celulares.inches}}</p> 
+            <p class="card-text">Descripcion: {{detalle_celulares.description}}</p> 
+            <p class="card-text">SKU: {{detalle_celulares.SKU}}</p> 
             <a href="/list_products/" class="btn btn-primary">Editar</a>
             <a href="/list_products/" class="btn btn-primary">Eliminar</a>
         </div>
     </div>
 
-    {% endfor %}
+    
 
 
 {% endblock %}
