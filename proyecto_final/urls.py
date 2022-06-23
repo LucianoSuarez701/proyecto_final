@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
-from app_product.views import detalle_celulares, detalle_heladeras
+from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
 
 from proyecto_final.views import index
 from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
@@ -35,6 +35,7 @@ urlpatterns = [
 
     path("detalle_celulares/<int:pk>/", detalle_celulares, name = "detalle_celulares"),
     path("detalle_heladeras/<int:pk>/", detalle_heladeras, name = "detalle_heladeras"),
+    path("detalle_televisores/<int:pk>/", detalle_televisores, name = "detalle_televisores"), 
 
     path('crear_celular/', Crear_celular.as_view(), name = 'crear_celular'),
     path('crear_heladera/', Crear_heladera.as_view(), name = 'crear_heladera'),

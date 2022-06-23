@@ -48,7 +48,12 @@ def detalle_heladeras(request, pk):
      detalle_heladeras = Heladeras.objects.get(id=pk)                                
      context = {'detalle_heladeras':detalle_heladeras}
      return render(request, 'detalle_heladeras.html', context=context) 
-     
+
+def detalle_televisores(request, pk):    
+     detalle_televisores = Televisores.objects.get(id=pk)                                
+     context = {'detalle_televisores':detalle_televisores}
+     return render(request, 'detalle_televisores.html', context=context)      
+
 class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
     template_name= 'productos.html'
