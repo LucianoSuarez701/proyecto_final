@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
 from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
+from app_product.views import eliminar_celular
 
 from proyecto_final.views import index
 from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
@@ -40,6 +41,8 @@ urlpatterns = [
     path('crear_celular/', Crear_celular.as_view(), name = 'crear_celular'),
     path('crear_heladera/', Crear_heladera.as_view(), name = 'crear_heladera'),
     path('crear_televisor/', Crear_televisor.as_view(), name = 'crear_televisor'),
+
+    path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
     
 ]
 

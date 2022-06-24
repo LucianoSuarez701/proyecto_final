@@ -54,6 +54,23 @@ def detalle_televisores(request, pk):
      context = {'detalle_televisores':detalle_televisores}
      return render(request, 'detalle_televisores.html', context=context)      
 
+def eliminar_celular(request, pk):
+    try:
+        if request.method == 'GET':
+            celular = Celulares.objects.get(id=pk)
+            context = {'celular':celular}
+        else:
+            celular = Celulares.objects.get(id=pk)
+            celular.delete()
+            context = {'message':'celular eliminado correctamente'}
+
+        return render(request, 'eliminar_celular.html', context=context)
+
+    except:
+        context = {'error':'El celular no existe'}
+        return render(request, 'eliminar_celular.html', context=context)
+               
+               
 class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
     template_name= 'productos.html'
