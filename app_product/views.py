@@ -4,6 +4,7 @@ from django.urls import reverse
 from app_product.models import Celulares, Heladeras, Televisores
 from django.views.generic import ListView, CreateView  # VISTAS GENERICAS DE DJANGO
 
+from django.shortcuts import redirect
 # Create your views here.
 
 def mostrar_celulares(request):    
@@ -63,6 +64,7 @@ def eliminar_celular(request, pk):
             celular = Celulares.objects.get(id=pk)
             celular.delete()
             context = {'message':'celular eliminado correctamente'}
+            return redirect("celulares")
 
         return render(request, 'eliminar_celular.html', context=context)
 
