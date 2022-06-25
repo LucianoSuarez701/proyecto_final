@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    Productos
+Productos
 {% endblock %}
 
 {% block contenido %}
-<h1 style="margin-left:30rem">Estas son nuestras heladeras</h1>
+<h1 style="margin-left:25rem">Estas son nuestras heladeras</h1>
 
-<form class="form-inline my-2 my-lg-0" action = "/crear_heladera/" method = "GET">
+<form class="form-inline my-5 my-lg-0" action="/crear_heladera/" method="GET">
     <button style="margin-left:40rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>
 </form>
 
 {{message}}
 
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+<div class="d-flex justify-content-between" >
     {% for heladera in heladeras %}
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
+    <div class="card border " style="width: 18rem ">
+        <div class="card-body ">
             <h5 class="card-title">{{heladera.name}}</h5>
             <p class="card-text">Precio: {{heladera.price}}</p>
-            <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-primary">Ver mas!</a>
+            <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-outline-success">Ver mas!</a>
         </div>
     </div>
-
+</div>
     {% endfor %}
 
 
-{% endblock %}
+    {% endblock %}

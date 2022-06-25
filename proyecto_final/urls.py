@@ -43,7 +43,13 @@ urlpatterns = [
     path('crear_televisor/', Crear_televisor.as_view(), name = 'crear_televisor'),
 
     path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
-    
+
+
+
+
+
+
+
 ]
 
 
