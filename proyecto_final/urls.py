@@ -14,25 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
-from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
-from app_product.views import eliminar_celular
-
+from django.urls import path
 from proyecto_final.views import index
+
+from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
 from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
+from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
+from app_product.views import eliminar_celular, eliminar_heladera
 
 #from app_product.views import List_products
-
+#from django.urls import include
 urlpatterns = [
+
     path('', index, name = 'index'),
     path('admin/', admin.site.urls),
-    # path('app_product/', include('app_product.urls')), 
-    # path('', List_products.as_view(), name = 'list_products'),
+    
+    path("search_product/", search_products, name = "search_products"),
+
     path("heladeras/", mostrar_heladeras, name = "heladeras"),
     path("celulares/", mostrar_celulares, name = "celulares"),
     path("televisores/", mostrar_televisores, name = "televisores"),
-    path("search_product/", search_products, name = "search_products"),
+    
 
     path("detalle_celulares/<int:pk>/", detalle_celulares, name = "detalle_celulares"),
     path("detalle_heladeras/<int:pk>/", detalle_heladeras, name = "detalle_heladeras"),
@@ -43,12 +45,10 @@ urlpatterns = [
     path('crear_televisor/', Crear_televisor.as_view(), name = 'crear_televisor'),
 
     path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
+    path('eliminar_heladera/<int:pk>/', eliminar_heladera, name = 'eliminar_heladera'),
 
-
-
-
-
-
+    # path('app_product/', include('app_product.urls')), 
+    # path('', List_products.as_view(), name = 'list_products'),
 
 ]
 

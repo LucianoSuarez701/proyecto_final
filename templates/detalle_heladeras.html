@@ -9,7 +9,7 @@
 
 <a style="margin-left:50rem" href="/heladeras/" class="btn btn-primary">Volver atras!</a>
 
-{{message}}
+<h1>{{message}}</h1>
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     
@@ -21,8 +21,8 @@
             <p class="card-text">Pulgadas: {{detalle_heladeras.inches}}</p> 
             <p class="card-text">Descripcion: {{detalle_heladeras.description}}</p> 
             <p class="card-text">SKU: {{detalle_heladeras.SKU}}</p> 
-            <a href="/list_products/" class="btn btn-primary">Editar</a>
-            <a href="/list_products/" class="btn btn-primary">Eliminar</a>
+            <a href="/editar_heladera/{{detalle_heladeras.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/eliminar_heladera/{{detalle_heladeras.id}}/" class="btn btn-primary">Eliminar</a>
         </div>
     </div>
 

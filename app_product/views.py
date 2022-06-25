@@ -71,7 +71,23 @@ def eliminar_celular(request, pk):
     except:
         context = {'error':'El celular no existe'}
         return render(request, 'eliminar_celular.html', context=context)
-               
+
+def eliminar_heladera(request, pk):
+    try:
+        if request.method == 'GET':
+            heladera = Heladeras.objects.get(id=pk)
+            context = {'heladera':heladera}
+        else:
+            heladera = Heladeras.objects.get(id=pk)
+            heladera.delete()
+            context = {'message':'heladera eliminada correctamente'}
+            return redirect("heladeras")
+
+        return render(request, 'eliminar_heladera.html', context=context)
+
+    except:
+        context = {'error':'La Heladera no existe'}
+        return render(request, 'eliminar_heladera.html', context=context)               
                
 class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
