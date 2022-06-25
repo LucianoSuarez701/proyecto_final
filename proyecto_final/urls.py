@@ -22,7 +22,7 @@ from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
 from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores
 from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
 from app_product.views import eliminar_celular, eliminar_heladera, eliminar_televisor
-from app_product.views import Editar_celular, Editar_heladera
+from app_product.views import Editar_celular, Editar_heladera, Editar_televisor
 
 #from app_product.views import List_products
 #from django.urls import include
@@ -48,6 +48,7 @@ urlpatterns = [
 
     path('editar_celular/<int:pk>/', Editar_celular.as_view(), name = 'editar_celular'),
     path('editar_heladera/<int:pk>/', Editar_heladera.as_view(), name = 'editar_heladera'),
+    path('editar_televisor/<int:pk>/', Editar_televisor.as_view(), name = 'editar_televisor'),
 
     path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
     path('eliminar_heladera/<int:pk>/', eliminar_heladera, name = 'eliminar_heladera'),

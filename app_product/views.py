@@ -148,3 +148,11 @@ class Editar_heladera(UpdateView):
     
     def get_success_url(self):
         return reverse('detalle_heladeras', kwargs = {'pk':self.object.pk})       
+
+class Editar_televisor(UpdateView):
+    model = Televisores
+    template_name = 'editar_televisor.html'
+    fields = '__all__'
+    
+    def get_success_url(self):
+        return reverse('detalle_televisores', kwargs = {'pk':self.object.pk})        
