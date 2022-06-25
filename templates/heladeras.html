@@ -4,27 +4,41 @@
 Productos
 {% endblock %}
 
-{% block contenido %}
-<h1 style="margin-left:25rem">Estas son nuestras heladeras</h1>
 
-<form class="form-inline my-5 my-lg-0" action="/crear_heladera/" method="GET">
-    <button style="margin-left:40rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>
-</form>
+{% block contenido %}
+
+<br>
+<h1 class="text-center col">Elijas su Heladera</h1>
+
+
 
 {{message}}
 
-<div class="d-flex justify-content-between" >
+
+
+
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for heladera in heladeras %}
 
-    <div class="card border " style="width: 18rem ">
+
+    <div class="card " style="width: 20rem ">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body ">
-            <h5 class="card-title">{{heladera.name}}</h5>
-            <p class="card-text">Precio: {{heladera.price}}</p>
+
+            <h5 class="card-title text-center">{{heladera.name}}</h5>
+            <p class="card-text ">Precio: {{heladera.price}}</p>
             <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-outline-success">Ver mas!</a>
+
         </div>
     </div>
 </div>
-    {% endfor %}
+
+<form class="form-inline my-5 my-lg-0  col" action="/crear_heladera/" method="GET">
+    <button style="margin-left:35rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>
+</form>
+
+<br>
+{% endfor %}
 
 
-    {% endblock %}
+{% endblock %}
