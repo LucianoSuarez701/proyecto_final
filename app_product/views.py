@@ -54,14 +54,6 @@ def detalle_televisores(request, pk):
      context = {'detalle_televisores':detalle_televisores}
      return render(request, 'detalle_televisores.html', context=context)      
 
-class Editar_celular(UpdateView):
-    model = Celulares
-    template_name = 'editar_celular.html'
-    fields = '__all__'
-    
-    def get_success_url(self):
-        return reverse('detalle_celulares', kwargs = {'pk':self.object.pk})
-
 def eliminar_celular(request, pk):
     try:
         if request.method == 'GET':
@@ -141,5 +133,18 @@ class Crear_televisor(CreateView):
     def get_success_url(self):
         return reverse('televisores') 
 
+class Editar_celular(UpdateView):
+    model = Celulares
+    template_name = 'editar_celular.html'
+    fields = '__all__'
+    
+    def get_success_url(self):
+        return reverse('detalle_celulares', kwargs = {'pk':self.object.pk})
 
-       
+class Editar_heladera(UpdateView):
+    model = Heladeras
+    template_name = 'editar_heladera.html'
+    fields = '__all__'
+    
+    def get_success_url(self):
+        return reverse('detalle_heladeras', kwargs = {'pk':self.object.pk})       
