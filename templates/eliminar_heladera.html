@@ -7,7 +7,7 @@
 {% block contenido %}
     <a style="margin-left:50rem" href="/heladeras/" class="btn btn-primary">Volver atras!</a>
     
-    <h3 style="color: red">Estas por eliminar el producto {{heladera.name}}, estas seguro?</h3>
+    <h3 style="color: red">Estas por eliminar la heladera {{heladera.name}}, estas seguro?</h3>
 
     <form method = "POST">
         {% csrf_token %}
