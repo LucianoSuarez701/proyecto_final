@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from proyecto_final.views import index
 
+from app_product.views import search_products 
 from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
-from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
+from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores
 from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
 from app_product.views import eliminar_celular, eliminar_heladera, eliminar_televisor
+from app_product.views import Editar_celular
 
 #from app_product.views import List_products
 #from django.urls import include
@@ -43,6 +45,8 @@ urlpatterns = [
     path('crear_celular/', Crear_celular.as_view(), name = 'crear_celular'),
     path('crear_heladera/', Crear_heladera.as_view(), name = 'crear_heladera'),
     path('crear_televisor/', Crear_televisor.as_view(), name = 'crear_televisor'),
+
+    path('editar_celular/<int:pk>/', Editar_celular.as_view(), name = 'editar_celular'),
 
     path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
     path('eliminar_heladera/<int:pk>/', eliminar_heladera, name = 'eliminar_heladera'),

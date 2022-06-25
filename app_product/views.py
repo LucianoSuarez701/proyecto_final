@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
 from app_product.models import Celulares, Heladeras, Televisores
-from django.views.generic import ListView, CreateView  # VISTAS GENERICAS DE DJANGO
+from django.views.generic import ListView, CreateView, UpdateView # VISTAS GENERICAS DE DJANGO
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -53,6 +53,14 @@ def detalle_televisores(request, pk):
      detalle_televisores = Televisores.objects.get(id=pk)                                
      context = {'detalle_televisores':detalle_televisores}
      return render(request, 'detalle_televisores.html', context=context)      
+
+class Editar_celular(UpdateView):
+    model = Celulares
+    template_name = 'editar_celular.html'
+    fields = '__all__'
+    
+    def get_success_url(self):
+        return reverse('detalle_celulares', kwargs = {'pk':self.object.pk})
 
 def eliminar_celular(request, pk):
     try:
