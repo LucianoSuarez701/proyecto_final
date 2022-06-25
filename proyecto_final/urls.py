@@ -20,7 +20,7 @@ from proyecto_final.views import index
 from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
 from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_televisores, search_products 
 from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
-from app_product.views import eliminar_celular, eliminar_heladera
+from app_product.views import eliminar_celular, eliminar_heladera, eliminar_televisor
 
 #from app_product.views import List_products
 #from django.urls import include
@@ -46,7 +46,8 @@ urlpatterns = [
 
     path('eliminar_celular/<int:pk>/', eliminar_celular, name = 'eliminar_celular'),
     path('eliminar_heladera/<int:pk>/', eliminar_heladera, name = 'eliminar_heladera'),
-
+    path('eliminar_televisor/<int:pk>/', eliminar_televisor, name = 'eliminar_televisor'),
+    
     # path('app_product/', include('app_product.urls')), 
     # path('', List_products.as_view(), name = 'list_products'),
 

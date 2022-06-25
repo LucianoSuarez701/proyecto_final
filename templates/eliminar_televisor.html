@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Eliminar Televisor
+{% endblock %}
+
+{% block contenido %}
+
+    <a style="margin-left:50rem" href="/televisores/" class="btn btn-primary">Volver atras!</a>
+    
+    <h3 style="color: red">Estas por eliminar el producto {{televisor.name}}, estas seguro?</h3>
+
+    <form method = "POST">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Eliminar</button>
+    </form>
+
+
+{% endblock %}

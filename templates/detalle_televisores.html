@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block contenido %}
-<h1 style="margin-left:30rem">Estos son los detalles de nuestros celulares</h1>
+<h1 style="margin-left:30rem">Estos son los detalles de nuestros Televisores</h1>
 
 <a style="margin-left:50rem" href="/televisores/" class="btn btn-primary">Volver atras!</a>
 
@@ -21,8 +21,8 @@
             <p class="card-text">Pulgadas: {{detalle_televisores.inches}}</p> 
             <p class="card-text">Descripcion: {{detalle_televisores.description}}</p> 
             <p class="card-text">SKU: {{detalle_televisores.SKU}}</p> 
-            <a href="/list_products/" class="btn btn-primary">Editar</a>
-            <a href="/list_products/" class="btn btn-primary">Eliminar</a>
+            <a href="/editar_televisor/{{detalle_televisores.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/eliminar_televisor/{{detalle_televisores.id}}" class="btn btn-primary">Eliminar</a>
         </div>
     </div>
 

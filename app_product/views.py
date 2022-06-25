@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.urls import reverse
 from app_product.models import Celulares, Heladeras, Televisores
 from django.views.generic import ListView, CreateView  # VISTAS GENERICAS DE DJANGO
-
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -88,7 +87,24 @@ def eliminar_heladera(request, pk):
     except:
         context = {'error':'La Heladera no existe'}
         return render(request, 'eliminar_heladera.html', context=context)               
-               
+
+def eliminar_televisor(request, pk):
+    try:
+        if request.method == 'GET':
+            televisor = Televisores.objects.get(id=pk)
+            context = {'televisor':televisor}
+        else:
+            televisor = Televisores.objects.get(id=pk)
+            televisor.delete()
+            context = {'message':'televisor eliminado correctamente'}
+            return redirect("televisores")
+
+        return render(request, 'eliminar_televisor.html', context=context)
+
+    except:
+        context = {'error':'El televisor no existe'}
+        return render(request, 'eliminar_televisor.html', context=context)
+
 class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
     template_name= 'productos.html'
