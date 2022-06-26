@@ -22,7 +22,9 @@
             <p class="card-text">Descripcion: {{detalle_televisores.description}}</p> 
             <p class="card-text">SKU: {{detalle_televisores.SKU}}</p> 
             <a href="/editar_televisor/{{detalle_televisores.id}}/" class="btn btn-primary">Editar</a>
+            {%if request.user.is_authenticated and request.user.is_superuser%}
             <a href="/eliminar_televisor/{{detalle_televisores.id}}" class="btn btn-primary">Eliminar</a>
+            {%endif%%}
         </div>
     </div>
 

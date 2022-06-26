@@ -22,7 +22,9 @@
             <p class="card-text">Descripcion: {{detalle_celulares.description}}</p> 
             <p class="card-text">SKU: {{detalle_celulares.SKU}}</p> 
             <a href="/editar_celular/{{detalle_celulares.id}}/" class="btn btn-primary">Editar</a>
+            {%if request.user.is_authenticated and request.user.is_superuser%}
             <a href="/eliminar_celular/{{detalle_celulares.id}}/" class="btn btn-primary">Eliminar</a>
+            {%endif%}
         </div>
     </div>
 

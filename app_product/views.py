@@ -4,6 +4,8 @@ from django.urls import reverse
 from app_product.models import Celulares, Heladeras, Televisores
 from django.views.generic import ListView, CreateView, UpdateView # VISTAS GENERICAS DE DJANGO
 from django.shortcuts import redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required #PARA TODO NOS TENEMOS QUE LOGUEAR, LO USE POR SEGURIDAD
 # Create your views here.
 
 def mostrar_celulares(request):    
@@ -39,21 +41,25 @@ def search_products(request):
           context = {"errors": 'No se encuentra el producto'}
      return render(request, "search_product.html", context = context)
 
+@login_required
 def detalle_celulares(request, pk):    
      detalle_celulares = Celulares.objects.get(id=pk)                                
      context = {'detalle_celulares':detalle_celulares}
      return render(request, 'detalle_celulares.html', context=context) 
 
+@login_required
 def detalle_heladeras(request, pk):    
      detalle_heladeras = Heladeras.objects.get(id=pk)                                
      context = {'detalle_heladeras':detalle_heladeras}
      return render(request, 'detalle_heladeras.html', context=context) 
 
+@login_required
 def detalle_televisores(request, pk):    
      detalle_televisores = Televisores.objects.get(id=pk)                                
      context = {'detalle_televisores':detalle_televisores}
      return render(request, 'detalle_televisores.html', context=context)      
 
+@login_required
 def eliminar_celular(request, pk):
     try:
         if request.method == 'GET':
@@ -71,6 +77,7 @@ def eliminar_celular(request, pk):
         context = {'error':'El celular no existe'}
         return render(request, 'eliminar_celular.html', context=context)
 
+@login_required
 def eliminar_heladera(request, pk):
     try:
         if request.method == 'GET':
@@ -88,6 +95,7 @@ def eliminar_heladera(request, pk):
         context = {'error':'La Heladera no existe'}
         return render(request, 'eliminar_heladera.html', context=context)               
 
+@login_required
 def eliminar_televisor(request, pk):
     try:
         if request.method == 'GET':
@@ -109,7 +117,7 @@ class List_products(ListView):
     model = Heladeras, Celulares, Televisores 
     template_name= 'productos.html'
     
-class Crear_celular(CreateView):
+class Crear_celular(LoginRequiredMixin, CreateView):
     model = Celulares
     template_name = 'crear_celular.html'
     fields = '__all__'    
@@ -117,7 +125,7 @@ class Crear_celular(CreateView):
     def get_success_url(self):
         return reverse('celulares')   
 
-class Crear_heladera(CreateView):
+class Crear_heladera(LoginRequiredMixin, CreateView):
     model = Heladeras
     template_name = 'crear_heladera.html'
     fields = '__all__'    
@@ -125,7 +133,7 @@ class Crear_heladera(CreateView):
     def get_success_url(self):
         return reverse('heladeras')    
 
-class Crear_televisor(CreateView):
+class Crear_televisor(LoginRequiredMixin, CreateView):
     model = Televisores
     template_name = 'crear_televisor.html'
     fields = '__all__'    
@@ -133,7 +141,7 @@ class Crear_televisor(CreateView):
     def get_success_url(self):
         return reverse('televisores') 
 
-class Editar_celular(UpdateView):
+class Editar_celular(LoginRequiredMixin, UpdateView):
     model = Celulares
     template_name = 'editar_celular.html'
     fields = '__all__'
@@ -141,7 +149,7 @@ class Editar_celular(UpdateView):
     def get_success_url(self):
         return reverse('detalle_celulares', kwargs = {'pk':self.object.pk})
 
-class Editar_heladera(UpdateView):
+class Editar_heladera(LoginRequiredMixin, UpdateView):
     model = Heladeras
     template_name = 'editar_heladera.html'
     fields = '__all__'
@@ -149,7 +157,7 @@ class Editar_heladera(UpdateView):
     def get_success_url(self):
         return reverse('detalle_heladeras', kwargs = {'pk':self.object.pk})       
 
-class Editar_televisor(UpdateView):
+class Editar_televisor(LoginRequiredMixin, UpdateView):
     model = Televisores
     template_name = 'editar_televisor.html'
     fields = '__all__'
