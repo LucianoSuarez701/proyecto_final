@@ -8,13 +8,16 @@ Productos
 <br>
 <h1 class="text-center col">Elija su Televisor</h1>
 
-
+<form class="form-inline my-2 my-lg-0" action="/crear_televisor/" method="GET">
+    <button style="margin-left:43rem" class="btn btn-primary" type="submit">Cree su propio Televisor</button>
+</form>
 
 {{message}}
 
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+
     {% for televisor in televisores %}
 
+    <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{televisor.name}}</h5>
@@ -24,9 +27,6 @@ Productos
     </div>
 </div>
 
-<form class="form-inline my-2 my-lg-0" action="/crear_televisor/" method="GET">
-    <button style="margin-left:35rem" class="btn btn-primary" type="submit">Cree su propio Televisor</button>
-</form>
 <br>
 {% endfor %}
 

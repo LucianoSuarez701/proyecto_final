@@ -8,13 +8,16 @@ Productos
 <br>
 <h1 class="text-center col">Elija su Celular</h1>
 
-
+<form class="form-inline my-2 my-lg-0" action="/crear_celular/" method="GET">
+    <button style="margin-left:45rem" class="btn btn-primary" type="submit">Cree su propio Celular</button>
+</form>
 
 {{message}}
 
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+
     {% for celular in celulares %}
 
+    <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{celular.name}}</h5>
@@ -23,12 +26,9 @@ Productos
         </div>
     </div>
 </div>
-
-<form class="form-inline my-2 my-lg-0" action="/crear_celular/" method="GET">
-    <button style="margin-left:35rem" class="btn btn-primary" type="submit">Cree su propio Celular</button>
-</form>
 <br>
+
     {% endfor %}
 
 
-    {% endblock %}
+{% endblock %}
