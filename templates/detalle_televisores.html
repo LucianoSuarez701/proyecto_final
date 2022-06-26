@@ -24,7 +24,7 @@
             <a href="/editar_televisor/{{detalle_televisores.id}}/" class="btn btn-primary">Editar</a>
             {%if request.user.is_authenticated and request.user.is_superuser%}
             <a href="/eliminar_televisor/{{detalle_televisores.id}}" class="btn btn-primary">Eliminar</a>
-            {%endif%%}
+            {%endif%}
         </div>
     </div>
 
