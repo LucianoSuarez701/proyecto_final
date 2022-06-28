@@ -5,19 +5,43 @@ Productos
 {% endblock %}
 
 {% block contenido %}
-<br>
-<h1 class="text-center col">Elija su Celular</h1>
+<!--login-register-->
+<div class="col-auto pt-4 pl-5">
+    <a href="#" class="pr-4 fs-5 text-dark">LONGIN</a>
+    <a href="#" class="text-dark ">REGISTER</a>
+
+</div>
+
+<h1 class="text-center col pt-4">Elija su Celular</h1>
+
+{{message}}
 
 <form class="form-inline my-2 my-lg-0" action="/crear_celular/" method="GET">
     <button style="margin-left:45rem" class="btn btn-primary" type="submit">Cree su propio Celular</button>
 </form>
 
-{{message}}
+{% for celular in celulares %}
+
+<!--card-->
+<div class="container ">
+    <article class="col-4 justify-content-between">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_706335-MLA46183698439_052021-O.jpg"
+                alt="" class="card-img">
+            <div class=" card-img-overlay text-white d-flex flex-column justify-content-end ">
+                <h4 class="card-title ">{{celular.name}}</h4>
+                <p class="card-text">Precio: {{celular.price}}</p>
+                <a href="/detalle_celulares/{{celular.id}}/" class="btn btn-dark aling-items-center">Ver
+                    mas!</a>
+            </div>
+        </div>
+    </article>
+
+</div>
 
 
-    {% for celular in celulares %}
 
-    <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
+<!--<div class="d-flex" style="margin-top:3rem; margin-left:4rem">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{celular.name}}</h5>
@@ -25,10 +49,10 @@ Productos
             <a href="/detalle_celulares/{{celular.id}}/" class="btn btn-primary">Ver mas!</a>
         </div>
     </div>
-</div>
+</div>-->
 <br>
 
-    {% endfor %}
+{% endfor %}
 
 
 {% endblock %}

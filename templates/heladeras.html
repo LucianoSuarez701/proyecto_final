@@ -7,32 +7,56 @@ Productos
 
 {% block contenido %}
 
-<br>
-<h1 class="text-center col">Elija su Heladera</h1>
+<!--login-register-->
+<div class="col-auto pt-4 pl-5">
+    <a href="#" class="pr-4 fs-5 text-dark">LONGIN</a>
+    <a href="#" class="text-dark ">REGISTER</a>
+
+</div>
+
+<h1 class="text-center col pt-4">Elija su Heladera</h1>
 
 {{message}}
 
+<!--boton-->
 <form class="form-inline my-5 my-lg-0  col" action="/crear_heladera/" method="GET">
     <button style="margin-left:43rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>
 </form>
 
-    {% for heladera in heladeras %}
 
-    <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
-    <div class="card " style="width: 20rem ">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body ">
-
-            <h5 class="card-title text-center">{{heladera.name}}</h5>
-            <p class="card-text ">Precio: {{heladera.price}}</p>
-            <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-outline-success">Ver mas!</a>
-
+{% for heladera in heladeras %}
+<!--card-->
+<div class="container ">
+    <article class="col-4 justify-content-between">
+        <div class="card">
+            <img src="https://www.mobihogar.com.ar/91-thickbox_default/heladera-bambi-2f-1200-plata-gtia12meses.jpg"
+                alt="" class="card-img">
+            <div class=" card-img-overlay text-dark d-flex flex-column justify-content-end ">
+                <h4 class="card-title ">{{heladera.name}}</h4>
+                <p class="card-text">Precio: {{heladera.price}}</p>
+                <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-dark aling-items-center">Ver
+                    mas!</a>
+            </div>
         </div>
-    </div>
+    </article>
+
 </div>
 
+<!--
+<article class="col-4">
+    <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
+        <div class="card " style="width: 20rem ">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body ">
+
+                <h5 class="card-title text-center">{{heladera.name}}</h5>
+                <p class="card-text ">Precio: {{heladera.price}}</p>
+                <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-outline-success">Ver mas!</a>
+
+            </div>
+        </div>
+    </div>
+</article>-->
 <br>
 {% endfor %}
-
-
 {% endblock %}
