@@ -17,7 +17,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                context = {'message':f'Bienvenido {username}!! :D'}
+                context = {'message':f'Usted se ha logueado bajo el nombre de {username}!!'}
                 return render(request, 'index.html', context = context)
             else:
                 context = {'errors':'No hay ningun usuario con esas credenciales!!!'}
@@ -65,3 +65,10 @@ def logout_view(request):
 
 def index(request):
     return render(request, 'index.html')
+
+def contact(request):
+    if request.user.is_authenticated:
+        print(request.user.username)
+        return render(request, 'contact.html')
+    else:
+        return redirect('login')

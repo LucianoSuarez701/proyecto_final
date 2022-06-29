@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block contenido %}
+
 <h1 style="margin-left:30rem">Aca va el contenido del Producto buscado</h1>
 
 {{message}}
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for producto in productoheladeras %}
- 
+
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{producto.name}}</h5>
@@ -46,9 +47,10 @@
             <a href="/list_products/" class="btn btn-primary">Ver mas!</a>
         </div>
     </div>
+<br>
 
     {% endfor %}
 
 
+{% endblock %} <br>
 
-{% endblock %}

@@ -164,3 +164,4 @@ class Editar_televisor(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
         return reverse('detalle_televisores', kwargs = {'pk':self.object.pk})        
+    
