@@ -5,16 +5,66 @@ Inicio
 {% endblock %}
 
 {% block contenido %}
-<h3><div class="row p-3 container-fluid-expand-lg  text-white text-center p-3" style="background: rgb(0, 0, 0);"> {{message}}</h3>
-<main>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://www.creativefabrica.com/wp-content/uploads/2020/09/18/Black-friday-online-shopping-banner-Graphics-5555485-1.jpg" class="d-block w-100" alt="...">
-          </div>
-      </div>
+<div class="jumbotron">
+  <h2 class="display-4 text-center">
+    Proyecto Final - Python Comisión 36945</h2>
+  <p class="lead text-center">Hola Luca buenas tardes. Este proyecto lo armamos en base a lo aprendido durante las 25 clases de tu curso. <br> Te sugerimos registrarte o loguearte mediante un superusuario para poder explotar el repositorio a pleno. De lo contrario estaras bastante restringido</p>
+  <p class="card-text text-center"><small class="text-muted">Por favor tener en cuenta que no somos FrontEnd (y backend superjunior!!), por lo tanto hay cosas complicadas de ver para los ojos!!</small></p>
+  <hr class="my-4">
+  <p>Toda la informacion de productos de esta tienda, te va a llevar a una pagina para comprar y perder plata!!</p>
 
-</main>
+
+</div>
+
+
+<h1 class="mainText text-center" style="color:dark" >Contamos con los siguientes productos</h1>
+<div class="card-group">
+  
+  <div class="d-flex" style="margin-top:2rem; margin-left:1rem">
+  <div class="card text-center">
+      <img src="https://megatonedigital.vteximg.com.br/arquivos/ids/156314-520-520/134923_01.jpg?v=637830547055600000"
+          width="200" height="500" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title text-center">Heladeras</h5>
+          <p class="card-text text-center">Aca podes encontrar las mejores heladeras para guardar Cerveza!</p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-danger btn-lg" href="/heladeras/" role="button">Ir a Comprar</a>
+          {% else %}
+          <a class="btn btn-danger btn-lg" href="/login/" role="button">Logueate para seguir</a>
+          {% endif %}
+      </div>
+  </div>
+</div>
+<div class="d-flex" style="margin-top:2rem; margin-left:1rem">
+  <div class="card text-center">
+      <img src="https://megatonedigital.vteximg.com.br/arquivos/ids/174146-520-520/145431_01.jpg?v=637826212487370000" width="180" height="500" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Celulares</h5>
+          <p class="card-text">Nokia, Iphone, Samsung, Lo que quieras ACA!</p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-danger btn-lg" href="/celulares/" role="button">Ir a Comprar</a>
+          {% else %}
+          <a class="btn btn-danger btn-lg" href="/login/" role="button">Logueate para seguir</a>
+          {% endif %}
+      </div>
+  </div>
+</div>
+<div class="d-flex" style="margin-top:2rem; margin-left:1rem">
+  <div class="card text-center">
+      <img src="https://megatonedigital.vteximg.com.br/arquivos/ids/173983-520-520/145505_01.jpg?v=637814160197930000"
+          width="180" height="500" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Televisores</h5>
+          <p class="card-text">Desde el tele de tu abuelo, hasta el super 4k HD</p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-danger btn-lg" href="/televisores/" role="button">Ir a Comprar</a>
+          {% else %}
+          <a class="btn btn-danger btn-lg" href="/login/" role="button">Logueate para seguir</a>
+          {% endif %}
+      </div>
+  </div>
+</div>
+</div>
 
 {% endblock %}
 
