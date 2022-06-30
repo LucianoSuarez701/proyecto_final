@@ -79,3 +79,10 @@ def leandro(request):
         return render(request,'leandro.html')
     else:
         return redirect('login')
+
+def luciano(request):
+    if request.user.is_authenticated:
+        print(request.user.username)
+        return render(request,'luciano.html')
+    else:
+        return redirect('login')        
