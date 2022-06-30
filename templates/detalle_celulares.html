@@ -15,9 +15,11 @@
     
 
     <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        
-            <img src= {{detalle_celulares.image.url}} class="card-img-top" >
+        {%if detalle_celulares.image%}
+        <img src= {{detalle_celulares.image.url}} class="card-img-top" width="100" height="300">
+        {%endif%}
+        <div class="card-body"></div>
+            
             <h5 class="card-title">{{detalle_celulares.name}}</h5>
             <p class="card-text">Precio: {{detalle_celulares.price}}</p> 
             <p class="card-text">Pulgadas: {{detalle_celulares.inches}}</p> 
