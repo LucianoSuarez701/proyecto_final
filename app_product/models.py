@@ -18,7 +18,7 @@ class Heladeras(models.Model):
     description = models.CharField(max_length=200, blank=True, null=True)
     SKU = models.CharField(max_length=30, unique=True)
     is_active = models.BooleanField(default=True)
-    
+    image= models.ImageField(upload_to="heladeras", blank=True, null=True)
     
 class Televisores(models.Model):
     name = models.CharField(max_length=40)
