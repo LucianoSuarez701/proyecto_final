@@ -72,3 +72,10 @@ def contact(request):
         return render(request, 'contact.html')
     else:
         return redirect('login')
+    
+def leandro(request):
+    if request.user.is_authenticated:
+        print(request.user.username)
+        return render(request,'leandro.html')
+    else:
+        return redirect('login')
