@@ -28,17 +28,15 @@ def search_products(request):
      productoheladeras = Heladeras.objects.filter(name__icontains=request.GET['search'])
      productocel = Celulares.objects.filter(name__icontains=request.GET['search'])
      productotv = Televisores.objects.filter(name__icontains=request.GET['search'])
-     print(2)
-
+     
      if productoheladeras.exists():
          context = {'productoheladeras': productoheladeras}
-         print (1)
      elif productotv.exists():
-            context = {'productotv': productotv}
+         context = {'productotv': productotv}
      elif productocel.exists():
-            context = {'productocel': productocel}
+         context = {'productocel': productocel}
      else:
-          context = {"errors": 'No se encuentra el producto'}
+         context = {"errors": 'No se encuentra el producto'}
      return render(request, "search_product.html", context = context)
 
 @login_required
