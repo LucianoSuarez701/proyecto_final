@@ -19,6 +19,9 @@ Productos
 
     <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
     <div class="card" style="width: 18rem;">
+        {%if celular.image%}
+        <img src= {{celular.image.url}} class="card-img-top" >
+        {%endif%}
         <div class="card-body">
             <h5 class="card-title">{{celular.name}}</h5>
             <p class="card-text">Precio: {{celular.price}}</p>

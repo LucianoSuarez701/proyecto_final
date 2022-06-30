@@ -20,7 +20,7 @@ class Televisores_form(forms.ModelForm):
 class Crear_celulares_form(forms.ModelForm):
     class Meta:
         model = Celulares
-        fields = ["name","price","inches","description","SKU", "is_active"] 
+        fields = ["name","price","inches","description","SKU", "is_active","image"] 
 
 class Crear_heladeras_form(forms.ModelForm):
     class Meta:

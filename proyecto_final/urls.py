@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
 from proyecto_final.views import index
+from django.conf import  settings
+from django.conf.urls.static import static
 
 from app_product.views import search_products 
 from app_product.views import Crear_celular, Crear_heladera, Crear_televisor
@@ -65,6 +68,7 @@ urlpatterns = [
     # path('app_product/', include('app_product.urls')), 
     # path('', List_products.as_view(), name = 'list_products'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, Document_root=settings.MEDIA_ROOT)
