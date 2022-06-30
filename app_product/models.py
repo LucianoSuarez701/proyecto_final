@@ -27,4 +27,4 @@ class Televisores(models.Model):
     description = models.CharField(max_length=200, blank=True, null=True)
     SKU = models.CharField(max_length=30, unique=True)
     is_active = models.BooleanField(default=True)
-    
+    image= models.ImageField(upload_to="televisores", blank=True, null=True)

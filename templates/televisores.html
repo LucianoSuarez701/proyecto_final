@@ -19,6 +19,9 @@ Productos
 
     <div class="d-flex" style="margin-top:3rem; margin-left:4rem">
     <div class="card" style="width: 18rem;">
+        {%if televisor.image%}
+        <img src= {{televisor.image.url}} class="card-img-top" >
+        {%endif%}
         <div class="card-body">
             <h5 class="card-title">{{televisor.name}}</h5>
             <p class="card-text">Precio: {{televisor.price}}</p>

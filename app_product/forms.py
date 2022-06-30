@@ -25,9 +25,9 @@ class Crear_celulares_form(forms.ModelForm):
 class Crear_heladeras_form(forms.ModelForm):
     class Meta:
         model = Heladeras
-        fields = ["name","price","litters","description","SKU", "is_active"]         
+        fields = ["name","price","litters","description","SKU", "is_active", "image"]         
 
 class Crear_televisores_form(forms.ModelForm):
     class Meta:
         model = Televisores
-        fields = ["name","price","inches","description","SKU", "is_active"]         
+        fields = ["name","price","inches","description","SKU", "is_active","image"]         
