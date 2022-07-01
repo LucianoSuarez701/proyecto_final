@@ -85,4 +85,18 @@ def luciano(request):
         print(request.user.username)
         return render(request,'luciano.html')
     else:
-        return redirect('login')        
+        return redirect('login')  
+    
+def lautaro(request):
+    if request.user.is_authenticated:
+        print(request.user.username)
+        return render(request,'lautaro.html')
+    else:
+        return redirect('login')       
+    
+def about(request):
+    if request.user.is_authenticated:
+        print(request.user.username)
+        return render(request,'about.html')
+    else:
+        return redirect('login')   
