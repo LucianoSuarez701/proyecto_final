@@ -26,6 +26,7 @@ from app_product.views import mostrar_heladeras,mostrar_celulares, mostrar_telev
 from app_product.views import detalle_celulares, detalle_heladeras, detalle_televisores
 from app_product.views import eliminar_celular, eliminar_heladera, eliminar_televisor
 from app_product.views import Editar_celular, Editar_heladera, Editar_televisor
+
 from proyecto_final.views import login_view, register_view, logout_view, contact, leandro, luciano, about, lautaro
 
 #from app_product.views import List_products
@@ -72,7 +73,8 @@ urlpatterns = [
     # path('app_product/', include('app_product.urls')), 
     # path('', List_products.as_view(), name = 'list_products'),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, Document_root=settings.MEDIA_ROOT)
