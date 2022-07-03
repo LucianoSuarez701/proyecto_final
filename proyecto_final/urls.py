@@ -73,8 +73,7 @@ urlpatterns = [
     # path('app_product/', include('app_product.urls')), 
     # path('', List_products.as_view(), name = 'list_products'),
 
-] 
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, Document_root=settings.MEDIA_ROOT)
