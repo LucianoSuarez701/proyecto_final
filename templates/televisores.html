@@ -8,9 +8,11 @@ Productos
 <br>
 <h1 class="text-center col">Elija su Televisor</h1>
 
+{%if requested.user.is_authenticated and requested.user.is_superuser%}
 <form class="form-inline my-2 my-lg-0" action="/crear_televisor/" method="GET">
     <button style="margin-left:53rem" class="btn btn-primary" type="submit">Cree su propio Televisor</button>
 </form>
+{%endif%}
 
 {{message}}
 

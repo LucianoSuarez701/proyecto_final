@@ -12,9 +12,11 @@ Productos
 
 {{message}}
 
+{%if requested.user.is_authenticated and requested.user.is_superuser%}
 <form class="form-inline my-5 my-lg-0  col text-center" action="/crear_heladera/" method="GET">
-    <button style="margin-left:53rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>
+    <button style="margin-left:53rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>  
 </form>
+{%endif%}
 
     {% for heladera in heladeras %}
 
