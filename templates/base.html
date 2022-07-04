@@ -61,10 +61,12 @@
                 {% endif %}
             
             </ul>
+            {% if request.user.is_authenticated %}
             <form class="form-inline my-2 my-lg-0" action="/search_product/" method="GET">
                 <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name='search'>
                 <button class="btn btn-secondary" type="submit">Search</button>
             </form>
+            {% endif %}
         </div>
     </nav>
 
