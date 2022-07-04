@@ -12,7 +12,7 @@ Productos
 
 {{message}}
 
-{%if requested.user.is_authenticated and requested.user.is_superuser%}
+{%if request.user.is_authenticated and request.user.is_superuser%}
 <form class="form-inline my-5 my-lg-0  col text-center" action="/crear_heladera/" method="GET">
     <button style="margin-left:53rem" class="btn btn-primary" type="submit">Cree su propia Heladera</button>  
 </form>
@@ -29,7 +29,7 @@ Productos
 
             <h5 class="card-title text-center">{{heladera.name}}</h5>
             <p class="card-text ">Precio: {{heladera.price}}</p>
-            <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-outline-success">Ver mas!</a>
+            <a href="/detalle_heladeras/{{heladera.id}}/" class="btn btn-primary">Ver mas!</a>
 
         </div>
     </div>
